@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"YSDropdownMagnify";
+    self.title = @"下拉放大";
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view, typically from a nib.
     _dataArray = @[@"隐藏原生导航栏，自定义导航View",@"改变原生导航栏背景透明",@"原生导航栏通过添加背景图片改变"];
