@@ -11,21 +11,46 @@
 
 @implementation UINavigationBar (Transparent)
 
-static const void *KCustomViewKey = @"KCustomViewKey";
+static char KCustomViewKey;
 
-- (void)js_setBackgroundColor:(UIColor *)backgroundColor
+- (void)ys_setBackgroundColor:(UIColor *)backgroundColor
 {
-    if (!self.customView) {
-        [self setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-        [self setShadowImage:[[UIImage alloc] init]];
-        self.customView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, 64)];
-        self.customView.backgroundColor = [UIColor clearColor];
-        [self addSubview:self.customView];
+    if (!self.customView)
+    {
+        [self setBackgroundImage:[UIImage new] forBarMetrics:(UIBarMetricsDefault)];
+        //[self setShadowImage:[[UIImage alloc] init]];
+        
+        self.customView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) + 20)];
+        self.customView.userInteractionEnabled = NO;
+        self.customView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        [self insertSubview:self.customView atIndex:0];
     }
     self.customView.backgroundColor = backgroundColor;
 }
 
-- (void)js_reset
+- (void)ys_setElementsAlpha:(CGFloat)alpha
+{
+    [[self valueForKey:@"_leftViews"] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger i, BOOL *stop) {
+        view.alpha = alpha;
+    }];
+    
+    [[self valueForKey:@"_rightViews"] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger i, BOOL *stop) {
+        view.alpha = alpha;
+    }];
+    
+    UIView *titleView = [self valueForKey:@"_titleView"];
+    titleView.alpha = alpha;
+    
+    //  when viewController first load, the titleView maybe nil
+    [[self subviews] enumerateObjectsUsingBlock:^(UIView *obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:NSClassFromString(@"UINavigationItemView")]) {
+            obj.alpha = alpha;
+            *stop = YES;
+        }
+    }];
+}
+
+- (void)ys_reset
 {
     [self setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [self setShadowImage:nil];

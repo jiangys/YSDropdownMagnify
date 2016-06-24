@@ -14,7 +14,7 @@
 #define YSRGBAColor(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 #define kHeadImageHeight 200
 
-@interface Drop1ViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface Drop1ViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) UIImageView *imageView;
@@ -25,32 +25,34 @@
 @implementation Drop1ViewController
 
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-    //[self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    //[self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
     [super viewWillDisappear:animated];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"导航栏下拉隐藏";
+    self.title = @"自定义导航";
     
     //添加TableView
     [self createTableView];
     //添加表头视图
     [self addTableHeadView];
     
-    //[self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    // 修复 侧滑失效
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
     
     _narBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
-    //_narBar.backgroundColor = YSRGBAColor(216,64,66,0.1);
+
     [self.view addSubview:_narBar];
 }
 
@@ -125,7 +127,7 @@
     NSLog(@"%f",reoffSet);
     
     //kHeadImageHeight-64是为了向上拉倒导航栏底部时alpha = 1
-    CGFloat alpha = reoffSet/(kHeadImageHeight-64);
+    CGFloat alpha = reoffSet/(kHeadImageHeight - 64);
     if (alpha>=1) {
         alpha = 0.99;
     }

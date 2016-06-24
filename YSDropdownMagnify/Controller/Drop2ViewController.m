@@ -12,7 +12,6 @@
 
 #define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
-#define YSRGBAColor(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 #define kHeadImageHeight 200
 
 @interface Drop2ViewController ()<UITableViewDelegate,UITableViewDataSource>

@@ -10,8 +10,9 @@
 
 @interface UINavigationBar (Transparent)
 
-- (void)js_setBackgroundColor:(UIColor *)backgroundColor;
-
-- (void)js_reset;
+// 如想实现导航颜色的渐变 ，则translucent 属性不可为no，系统默认为yes
+- (void)ys_setBackgroundColor:(UIColor *)backgroundColor;
+- (void)ys_setElementsAlpha:(CGFloat)alpha;
+- (void)ys_reset;
 
 @end

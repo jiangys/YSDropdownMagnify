@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1102FB1D1CCC310077B0C6 /* YSTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1102FA1D1CCC310077B0C6 /* YSTestViewController.m */; };
+		5A1103041D1D0EA70077B0C6 /* UIView+YSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1103031D1D0EA70077B0C6 /* UIView+YSKit.m */; };
+		5A1103061D1D11040077B0C6 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A1103051D1D11040077B0C6 /* icon.jpg */; };
 		5A864EF51D1BB50D00C41AC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A864EF41D1BB50D00C41AC5 /* main.m */; };
 		5A864EF81D1BB50D00C41AC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A864EF71D1BB50D00C41AC5 /* AppDelegate.m */; };
 		5A864EFB1D1BB50D00C41AC5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A864EFA1D1BB50D00C41AC5 /* ViewController.m */; };
@@ -22,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A1102F91D1CCC310077B0C6 /* YSTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTestViewController.h; sourceTree = "<group>"; };
+		5A1102FA1D1CCC310077B0C6 /* YSTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTestViewController.m; sourceTree = "<group>"; };
+		5A1103021D1D0EA70077B0C6 /* UIView+YSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YSKit.h"; sourceTree = "<group>"; };
+		5A1103031D1D0EA70077B0C6 /* UIView+YSKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YSKit.m"; sourceTree = "<group>"; };
+		5A1103051D1D11040077B0C6 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
 		5A864EF01D1BB50D00C41AC5 /* YSDropdownMagnify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSDropdownMagnify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A864EF41D1BB50D00C41AC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5A864EF61D1BB50D00C41AC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,8 +89,11 @@
 				5A864EF71D1BB50D00C41AC5 /* AppDelegate.m */,
 				5A864EF91D1BB50D00C41AC5 /* ViewController.h */,
 				5A864EFA1D1BB50D00C41AC5 /* ViewController.m */,
+				5A1102F91D1CCC310077B0C6 /* YSTestViewController.h */,
+				5A1102FA1D1CCC310077B0C6 /* YSTestViewController.m */,
 				5A864EFC1D1BB50D00C41AC5 /* Main.storyboard */,
 				5A864F121D1BB89400C41AC5 /* background@2x.png */,
+				5A1103051D1D11040077B0C6 /* icon.jpg */,
 				5A864EFF1D1BB50D00C41AC5 /* Assets.xcassets */,
 				5A864F011D1BB50D00C41AC5 /* LaunchScreen.storyboard */,
 				5A864F041D1BB50D00C41AC5 /* Info.plist */,
@@ -106,6 +117,8 @@
 				5A864F1B1D1BD4A500C41AC5 /* UINavigationBar+Transparent.m */,
 				5A864F231D1BE27D00C41AC5 /* UIViewController+navigatinSetting.h */,
 				5A864F241D1BE27D00C41AC5 /* UIViewController+navigatinSetting.m */,
+				5A1103021D1D0EA70077B0C6 /* UIView+YSKit.h */,
+				5A1103031D1D0EA70077B0C6 /* UIView+YSKit.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -181,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A864F031D1BB50D00C41AC5 /* LaunchScreen.storyboard in Resources */,
+				5A1103061D1D11040077B0C6 /* icon.jpg in Resources */,
 				5A864F001D1BB50D00C41AC5 /* Assets.xcassets in Resources */,
 				5A864F131D1BB89400C41AC5 /* background@2x.png in Resources */,
 				5A864EFE1D1BB50D00C41AC5 /* Main.storyboard in Resources */,
@@ -197,10 +211,12 @@
 				5A864F191D1BC75700C41AC5 /* Drop2ViewController.m in Sources */,
 				5A864EFB1D1BB50D00C41AC5 /* ViewController.m in Sources */,
 				5A864F1F1D1BD53300C41AC5 /* Drop3ViewController.m in Sources */,
+				5A1103041D1D0EA70077B0C6 /* UIView+YSKit.m in Sources */,
 				5A864F1C1D1BD4A500C41AC5 /* UINavigationBar+Transparent.m in Sources */,
 				5A864F111D1BB70000C41AC5 /* Drop1ViewController.m in Sources */,
 				5A864F251D1BE27D00C41AC5 /* UIViewController+navigatinSetting.m in Sources */,
 				5A864EF81D1BB50D00C41AC5 /* AppDelegate.m in Sources */,
+				5A1102FB1D1CCC310077B0C6 /* YSTestViewController.m in Sources */,
 				5A864EF51D1BB50D00C41AC5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

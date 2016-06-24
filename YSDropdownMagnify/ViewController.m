@@ -25,7 +25,7 @@
     self.title = @"YSDropdownMagnify";
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view, typically from a nib.
-    _dataArray = @[@"个人中心",@"导航栏透明"];
+    _dataArray = @[@"隐藏原生导航栏，自定义导航View",@"改变原生导航栏背景透明",@"原生导航栏通过添加背景图片改变"];
     
     _tableView= [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
     _tableView.dataSource = self;
@@ -60,11 +60,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        Drop3ViewController *mineVc = [[Drop3ViewController alloc] init];
+        Drop1ViewController *mineVc = [[Drop1ViewController alloc] init];
         [self.navigationController pushViewController:mineVc animated:YES];
-    }else
+    } else if (indexPath.row == 1)
     {
         Drop2ViewController *mineVc = [[Drop2ViewController alloc] init];
+        [self.navigationController pushViewController:mineVc animated:YES];
+    } else {
+        Drop3ViewController *mineVc = [[Drop3ViewController alloc] init];
         [self.navigationController pushViewController:mineVc animated:YES];
     }
 }
