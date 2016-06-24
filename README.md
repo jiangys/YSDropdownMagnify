@@ -8,3 +8,5 @@
 * 3.原生导航栏通过添加背景图片改变
 
 ###个人还是比较喜欢第二种
+
+###相关博客 [http://www.cnblogs.com/jys509/p/5614384.html](http://www.cnblogs.com/jys509/p/5614384.html)
