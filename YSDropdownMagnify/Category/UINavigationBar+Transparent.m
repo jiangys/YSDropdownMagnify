@@ -9,6 +9,23 @@
 #import "UINavigationBar+Transparent.h"
 #import <objc/runtime.h>
 
+#define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define IOS11_OR_LATER_SPACE(par) \
+({\
+float space = 0.0;\
+if (@available(iOS 11.0, *))\
+space = par;\
+(space);\
+})
+
+// safeArea 底部空白高度
+#define CASHIERDESK_SAFEAREA_BOTTOM_SPACE IOS11_OR_LATER_SPACE([[UIApplication sharedApplication].windows.firstObject safeAreaInsets].bottom)
+// safeArea 状态栏高度
+#define CASHIERDESK_SAFEAREA_TOP_SPACE IOS11_OR_LATER_SPACE([[UIApplication sharedApplication].windows.firstObject safeAreaInsets].top)
+// safeArea 状态栏增加的高度
+#define CASHIERDESK_SAFEAREA_TOP_ACTIVE_SPACE IOS11_OR_LATER_SPACE(MAX(0, CASHIERDESK_SAFEAREA_TOP_SPACE - 20))
+
 @implementation UINavigationBar (Transparent)
 
 static char KCustomViewKey;
@@ -20,7 +37,7 @@ static char KCustomViewKey;
         [self setBackgroundImage:[UIImage new] forBarMetrics:(UIBarMetricsDefault)];
         //[self setShadowImage:[[UIImage alloc] init]];
         
-        self.customView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) + 20)];
+        self.customView = [[UIView alloc] initWithFrame:CGRectMake(0, -(20 + CASHIERDESK_SAFEAREA_TOP_ACTIVE_SPACE), CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) + (CASHIERDESK_SAFEAREA_TOP_ACTIVE_SPACE + 20))];
         self.customView.userInteractionEnabled = NO;
         self.customView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [self insertSubview:self.customView atIndex:0];
