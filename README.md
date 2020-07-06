@@ -1,5 +1,5 @@
 # YSDropdownMagnify
-![(下拉放大)](http://images2015.cnblogs.com/blog/292326/201606/292326-20160624154240375-1228537680.gif)
+![(下拉放大)](https://github.com/jiangys/YSDropdownMagnify/blob/master/timg.jpg)
 
 ##说明
 #### 要实现的效果如上。在实际开发中，我们会使用到三种方式来实现。
