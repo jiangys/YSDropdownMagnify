@@ -1,5 +1,5 @@
 # YSDropdownMagnify
-![Image text](https://github.com/jiangys/YSDropdownMagnify/blob/master/sql3.png)
+![Image text](https://raw.github.com/jiangys/YSDropdownMagnify/blob/master/sql3.png)
 
 ##说明
 #### 要实现的效果如上。在实际开发中，我们会使用到三种方式来实现。
